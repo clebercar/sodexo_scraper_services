@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  api:
+    build: ./apps/api
+    command: sh -c "yarn && yarn dev:server"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./apps/api:/home/app
+    ports:
+      - 3333:3333
+      - 9229:9229
+    container_name: api_warren
+  client:
+    container_name: client_warren
+    command: sh -c "yarn && yarn start"
+    stdin_open: true  
+    tty: true
+    build: ./apps/client
+    volumes:
+      - "./apps/client:/app"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+  mongodb:
+    container_name: mongodb_warren
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./tmp/mongo:/data/db
