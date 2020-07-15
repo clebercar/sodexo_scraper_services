@@ -1,0 +1,7 @@
+
+[submodule "apps/api"]
+	path = apps/api
+	url = git@github.com:clebercar/sodexo_scraper.git
+[submodule "apps/client"]
+	path = apps/client
+	url = git@github.com:clebercar/sodexo_scraper_client.git
