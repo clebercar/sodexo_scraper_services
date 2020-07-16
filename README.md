@@ -48,3 +48,9 @@ Caso deseje utilizar o serviço do MongoDB que já se encontra no arquivo docker
 ```bash
 docker-compose up --build
 ```
+
+Após todos os serviços estarem rodando, será possível visualizar a tela inicial atrávés da url http://localhost:3000.
+
+---
+
+Feito por [Cleber Carvalho](https://www.linkedin.com/in/cleber-carvalho/)
